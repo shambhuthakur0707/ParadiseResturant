@@ -1,0 +1,131 @@
+.gallery-section {
+  position: relative;
+  background-color: var(--bg-secondary);
+  border-top: 1px solid var(--border-glass);
+  border-bottom: 1px solid var(--border-glass);
+}
+
+.gallery-header {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 3.5rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Masonry Grid Layout */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 240px;
+  gap: 1.5rem;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid var(--border-glass);
+  box-shadow: var(--shadow-card);
+  cursor: pointer;
+  background-color: var(--bg-tertiary);
+}
+
+/* Varied spans for masonry feeling */
+.gallery-item.span-tall {
+  grid-row: span 2;
+}
+
+.gallery-item.span-wide {
+  grid-column: span 2;
+}
+
+.gallery-photo-art {
+  width: 100%;
+  height: 100%;
+  transition: transform var(--transition-slow);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.75rem;
+}
+
+.gallery-item:hover .gallery-photo-art {
+  transform: scale(1.05);
+}
+
+/* Hover Overlay */
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 10, 0.75);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  opacity: 0;
+  transition: opacity var(--transition-medium);
+  z-index: 2;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+
+.gallery-zoom-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(229, 169, 59, 0.2);
+  border: 1px solid var(--accent-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-gold);
+  transform: translateY(10px);
+  transition: transform var(--transition-medium);
+}
+
+.gallery-item:hover .gallery-zoom-icon {
+  transform: translateY(0);
+}
+
+.gallery-overlay-caption {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  margin-top: 6px;
+}
+
+.gallery-overlay-tag {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent-gold-light);
+}
+
+@media (max-width: 900px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 220px;
+  }
+  .gallery-item.span-wide {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 240px;
+  }
+  .gallery-item.span-tall {
+    grid-row: span 1;
+  }
+}

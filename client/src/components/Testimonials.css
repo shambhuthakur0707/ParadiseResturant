@@ -1,0 +1,115 @@
+.testimonials-section {
+  position: relative;
+  background-color: var(--bg-primary);
+  overflow: hidden;
+}
+
+.testimonials-header {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 3.5rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.testimonial-carousel-wrapper {
+  max-width: 850px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.testimonial-card {
+  position: relative;
+  background: var(--bg-glass);
+  border: 1px solid var(--border-glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 8px;
+  padding: clamp(2rem, 5vw, 3.5rem);
+  box-shadow: var(--shadow-card);
+  text-align: center;
+  transition: all var(--transition-slow);
+}
+
+.testimonial-quote-mark {
+  font-family: var(--font-heading);
+  font-size: 5rem;
+  line-height: 1;
+  color: var(--accent-gold);
+  opacity: 0.25;
+  margin-bottom: -1rem;
+}
+
+.testimonial-quote-text {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: clamp(1.2rem, 2.5vw, 1.75rem);
+  line-height: 1.6;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+}
+
+.testimonial-rating {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 1.25rem;
+}
+
+.star-gold {
+  color: var(--accent-gold);
+  font-size: 1.2rem;
+}
+
+.testimonial-author-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.author-name {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--accent-gold-light);
+}
+
+.author-role {
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* Dots pagination */
+.testimonial-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 2.5rem;
+}
+
+.dot-btn {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  padding: 0;
+}
+
+.dot-btn.active {
+  width: 32px;
+  border-radius: 6px;
+  background: var(--accent-gold);
+  box-shadow: 0 0 12px rgba(229, 169, 59, 0.5);
+}
+
+.dot-btn:hover:not(.active) {
+  background: rgba(255, 255, 255, 0.35);
+}

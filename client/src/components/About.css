@@ -1,0 +1,143 @@
+.about-section {
+  position: relative;
+  background-color: var(--bg-secondary);
+  border-top: 1px solid var(--border-glass);
+  border-bottom: 1px solid var(--border-glass);
+  overflow: hidden;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: center;
+}
+
+.about-text-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-heading {
+  font-family: var(--font-heading);
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 600;
+  line-height: 1.15;
+  margin-bottom: 1.5rem;
+}
+
+.about-p {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 1.25rem;
+}
+
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-glass);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stat-number {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: var(--accent-gold);
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* Image container with gold border accent */
+.about-visual-col {
+  position: relative;
+}
+
+.about-image-wrapper {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+.about-image-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: -10px;
+  border: 1px solid var(--accent-gold);
+  border-radius: 6px;
+  opacity: 0.5;
+  pointer-events: none;
+  transform: translate(14px, 14px);
+  z-index: 0;
+  transition: transform var(--transition-medium), opacity var(--transition-medium);
+}
+
+.about-image-wrapper:hover::before {
+  transform: translate(8px, 8px);
+  opacity: 0.8;
+  box-shadow: var(--shadow-gold);
+}
+
+.about-image-canvas {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  aspect-ratio: 4/5;
+  background: 
+    linear-gradient(135deg, rgba(20, 16, 12, 0.3) 0%, rgba(10, 10, 10, 0.6) 100%),
+    url('/images/cafe-about.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 2.5rem;
+  border: 1px solid var(--border-glass);
+  backdrop-filter: blur(2px);
+}
+
+.about-badge-card {
+  background: rgba(10, 10, 10, 0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-glass);
+  padding: 1.25rem 1.5rem;
+  border-radius: 3px;
+  border-left: 3px solid var(--accent-gold);
+}
+
+.about-badge-card h4 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: var(--accent-gold-light);
+  margin-bottom: 4px;
+}
+
+.about-badge-card p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 868px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .about-image-wrapper::before {
+    display: none;
+  }
+}

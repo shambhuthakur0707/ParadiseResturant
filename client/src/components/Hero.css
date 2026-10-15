@@ -1,0 +1,137 @@
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 0 80px 0;
+  overflow: hidden;
+  background-color: var(--bg-primary);
+  background-image: url('/images/hero-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Atmospheric Cafe Ambient Glow */
+.hero-backdrop {
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(ellipse 70% 60% at 80% 20%, rgba(229, 169, 59, 0.16) 0%, rgba(200, 90, 50, 0.08) 40%, transparent 70%),
+    radial-gradient(circle at 20% 80%, rgba(20, 20, 20, 0.9) 0%, transparent 60%),
+    linear-gradient(180deg, rgba(10, 10, 10, 0.4) 0%, rgba(10, 10, 10, 0.95) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Subtle coffee bean / steam decorative aura */
+.hero-glow-orb {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(229, 169, 59, 0.08) 0%, transparent 70%);
+  top: 15%;
+  right: 10%;
+  filter: blur(50px);
+  animation: goldPulse 8s infinite alternate ease-in-out;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 1.5rem;
+}
+
+.hero-line {
+  width: 40px;
+  height: 1.5px;
+  background: var(--accent-gold);
+}
+
+.hero-subtitle {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+}
+
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 7.5vw, 5.8rem);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin-bottom: 1.75rem;
+  white-space: pre-line;
+}
+
+.hero-description {
+  max-width: 620px;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: 2.75rem;
+}
+
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+/* Scroll indicator */
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transition: color var(--transition-fast);
+}
+
+.hero-scroll-indicator:hover {
+  color: var(--accent-gold);
+}
+
+.scroll-chevron {
+  animation: bounceSlow 2.5s infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scroll-chevron svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--accent-gold);
+}

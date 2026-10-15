@@ -1,0 +1,228 @@
+.reservation-section {
+  position: relative;
+  background-color: var(--bg-secondary);
+  border-top: 1px solid var(--border-glass);
+}
+
+.reservation-header {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 3rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.reservation-card {
+  max-width: 760px;
+  margin: 0 auto;
+  background: var(--bg-glass);
+  border: 1px solid var(--border-glass);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-radius: 8px;
+  padding: clamp(2rem, 5vw, 3.5rem);
+  box-shadow: var(--shadow-card);
+  position: relative;
+  overflow: hidden;
+}
+
+.reservation-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+}
+
+/* Step indicator */
+.steps-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.step-indicator {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.step-indicator.active {
+  color: var(--accent-gold);
+  font-weight: 600;
+}
+
+.step-number {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-glass);
+  background: rgba(255, 255, 255, 0.04);
+  font-size: 0.75rem;
+}
+
+.step-indicator.active .step-number {
+  border-color: var(--accent-gold);
+  background: var(--accent-gold);
+  color: #0a0a0a;
+  font-weight: 700;
+  box-shadow: 0 0 12px rgba(229, 169, 59, 0.4);
+}
+
+.step-divider-line {
+  width: 40px;
+  height: 1px;
+  background: var(--border-glass);
+}
+
+/* Form Groups */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.75rem;
+}
+
+.form-group-full {
+  grid-column: 1 / -1;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-label {
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  background: rgba(18, 18, 18, 0.8);
+  border: 1px solid var(--border-glass);
+  border-radius: 4px;
+  padding: 0.9rem 1.1rem;
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  transition: all var(--transition-fast);
+  outline: none;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 15px rgba(229, 169, 59, 0.2);
+  background: rgba(22, 22, 22, 0.95);
+}
+
+.form-textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+/* Time Slots */
+.time-slots-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(95px, 1fr));
+  gap: 0.6rem;
+  margin-top: 6px;
+}
+
+.time-slot-btn {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-glass);
+  color: var(--text-secondary);
+  padding: 0.6rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.78rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-align: center;
+}
+
+.time-slot-btn:hover {
+  border-color: var(--accent-gold-light);
+  color: var(--text-primary);
+}
+
+.time-slot-btn.selected {
+  background: var(--accent-gold);
+  color: #0a0a0a;
+  border-color: var(--accent-gold);
+  font-weight: 600;
+  box-shadow: 0 0 12px rgba(229, 169, 59, 0.35);
+}
+
+/* Buttons in step */
+.form-nav-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.btn-full {
+  width: 100%;
+}
+
+/* Success state with checkmark */
+.reservation-success {
+  text-align: center;
+  padding: 2.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.success-icon-wrap {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  border: 2px solid var(--accent-gold);
+  background: rgba(229, 169, 59, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-gold);
+  margin-bottom: 1.5rem;
+  animation: goldPulse 3s infinite ease-in-out;
+}
+
+.success-title {
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
+  color: var(--text-primary);
+}
+
+.success-message {
+  max-width: 480px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 650px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
